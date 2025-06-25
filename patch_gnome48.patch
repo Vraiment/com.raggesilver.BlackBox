@@ -1,0 +1,20 @@
+diff --git a/src/widgets/ColorSchemeThumbnail.vala b/src/widgets/ColorSchemeThumbnail.vala
+index ab9c444..5d9011f 100644
+--- a/src/widgets/ColorSchemeThumbnail.vala
++++ b/src/widgets/ColorSchemeThumbnail.vala
+@@ -27,13 +27,13 @@ public class Terminal.ColorSchemeThumbnailProvider {
+   public static void init_resource () {
+     if (svg_content == null) {
+       try {
+-        uint8[] data;
++        string data;
+ 
+         GLib.File.new_for_uri (
+           "resource:///com/raggesilver/BlackBox/resources/svg/color-scheme-thumbnail.svg"
+         ).load_contents (null, out data, null);
+ 
+-        svg_content = (string) data;
++        svg_content = data;
+       }
+       catch (Error e) {
+         error ("%s", e.message);
